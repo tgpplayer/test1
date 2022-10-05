@@ -102,13 +102,19 @@ func pedirFigura() {
             print("Altura:")
             let altura = Float(readLine()!)
             
-            let figura = Triangulo(base: base!, altura: altura!)
-            print("El área de tu ", figuraNombre!, " es ", figura.calcularArea(), " y el perímetro ", figura.calcularPerimetro())
+            let figura = Triangulo(nombre: "t")
+            figura.base = base!
+            figura.altura = altura!
+            
+            var areaTriangulo: (Float, Float) -> Float = { base, altura in return (base * altura) / 2 }
+            var perímetroTriangulo: (Float) -> Float = { base in return base * 4 }
+            
+            print("El área de tu ", figuraNombre!, " es ", areaTriangulo(figura.base, figura.altura), " y el perímetro ", perímetroTriangulo(figura.base))
             
         } else if figuraNombre == "circulo" {
             print("Radio:")
             let radio = Float(readLine()!)
-            let figura = Circulo(radio: radio!)
+            let figura = Circulo(nombre: "c")
             print("Area de tu ", figuraNombre!, " : ", figura.calcularArea(), ". Perímetro: ", figura.calcularPerimetro())
             
         } else if figuraNombre == "rectangulo" {
@@ -117,13 +123,13 @@ func pedirFigura() {
             print("Lado 2:")
             let lado2 = Float(readLine()!)
             
-            let figura = Rectangulo(lado1: lado1!, lado2: lado2!)
+            let figura = Rectangulo(nombre: "r")
             print("Area de tu ", figuraNombre!, " : ", figura.calcularArea(), ". Perímetro: ", figura.calcularPerimetro())
         } else if figuraNombre == "cuadrado" {
             print("Lado:")
             let lado = Float(readLine()!)
             
-            let figura = Cuadrado(lado: lado!)
+            let figura = Cuadrado(nombre: "c")
             print("Area de tu ", figuraNombre!, " : ", figura.calcularArea(), ". Perímetro: ", figura.calcularPerimetro())
         }
             
