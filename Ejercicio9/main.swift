@@ -9,70 +9,72 @@ class Figura {
 }
 
 class Triangulo: Figura {
-    private let base: Float?
-    private let altura: Float?
-    
-    init(base: Float, altura: Float) {
-        self.base = base;
-        self.altura = altura;
-        super.init(nombre: "tri")
+    private var _base: Float?
+    private var _altura: Float?
+    public var base: Float {
+        get {
+            return self._base!
+        }
+        set(nuevaBase) {
+            self._base = nuevaBase
+        }
+    }
+    public var altura: Float {
+        get {
+            return self._altura!
+        }
+        set(nuevaAltura) {
+            self._altura = nuevaAltura
+        }
     }
     
-    func calcularArea() -> Float {
-        return (base! * altura!) / 2
-    }
-    func calcularPerimetro() -> Float {
-        return base! * 3
-    }
 }
 
 class Circulo: Figura {
-    private let radio: Float?
+    private var _radio: Float?
     
-    init(radio: Float) {
-        self.radio = radio
-        super.init(nombre: "c")
-    }
-    
-    func calcularArea () -> Float {
-        return 3.14 * (radio! * radio!)
-    }
-    func calcularPerimetro () -> Float {
-        return 2 * 3.14 * radio!
+    public var radio: Float {
+        get {
+            return self._radio!
+        }
+        set (nuevoRadio){
+            self._radio = nuevoRadio
+        }
     }
 }
 
 class Rectangulo: Figura {
-    private let lado1: Float?
-    private let lado2: Float?
+    private var _lado1: Float?
+    private var _lado2: Float?
     
-    init(lado1: Float, lado2: Float) {
-        self.lado1 = lado1
-        self.lado2 = lado2
-        super.init(nombre: "r")
+    public var lado1: Float {
+        get {
+            return self._lado1!
+        }
+        set (nuevoLado1) {
+            self._lado1 = nuevoLado1
+        }
     }
-    
-    func calcularArea () -> Float {
-        return lado1! * lado2!
-    }
-    func calcularPerimetro () -> Float {
-        return (lado1! + lado2!) * 2
+    public var lado2: Float {
+        get {
+            return self._lado2!
+        }
+        set(nuevoLado2) {
+            self._lado2 = nuevoLado2
+        }
     }
 }
 
 class Cuadrado: Figura {
-    private let lado: Float?
+    private var _lado: Float?
     
-    init(lado: Float) {
-        self.lado = lado
-        super.init(nombre: "c")
-    }
-    
-    func calcularArea () -> Float {
-        return lado! * lado!
-    }
-    func calcularPerimetro () -> Float {
-        return lado! * 4
+    public var lado: Float {
+        get {
+            return self._lado!
+        }
+        set(nuevoLado) {
+            self._lado = nuevoLado
+        }
     }
 }
 
