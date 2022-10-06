@@ -158,4 +158,5 @@ func pedirFigura() {
 }
 
 pedirFigura()
+print("Gracias ;)")
 
